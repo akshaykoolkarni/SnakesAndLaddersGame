@@ -1,0 +1,163 @@
+.main_content{
+background-color: brown;
+color: white;
+}
+.my_border{
+border: 1px solid black;
+}
+.content_table{
+border: 1px solid black;
+text-align: center;
+padding-top: 10px;
+}
+.even td:nth-child(even){
+background: #666;
+}
+.odd td:nth-child(odd){
+background: #666;
+}
+.player{
+width: 40px;
+height: 40px;
+border-radius: 20px;
+border: 1px solid black;
+text-align: center;
+color: white;
+}
+.score{
+border-radius: 25px;
+border: 1px solid black;
+padding: 5px;
+background-color: purple;
+color: white;
+font-size: 20px;
+font-weight: bold;
+}
+.random{
+border-radius: 20px;
+font-size: 20px;
+font-weight: bold;
+}
+#begin: hover{
+background-color: red;
+}
+
+#end{
+float: right;
+ border-radius: 20px;
+ border: 1px solid black;
+ padding: 5px;
+ background: yellow;
+ text-decoration: blink;
+ margin-top: -100px;
+
+}
+.snake1{
+height: 285px;
+    width: 43px;
+    position: absolute;
+    z-index: 1;
+    margin-top: 25px;
+    margin-left: 187px;
+}
+.snake2{
+height: 350px;
+    width: 50px;
+    position: absolute;
+    z-index: 1;
+    margin-top: 80px;
+    margin-left: 575px;
+}
+.snake3{
+height: 60px;
+    width: 250px;
+    position: absolute;
+    z-index: 1;
+    margin-top: 370px;
+    margin-left: 150px;
+}
+.snake4{
+height: 60px;
+    width: 250px;
+    position: absolute;
+    z-index: 1;
+    margin-top: 30px;
+    margin-left: 300px;
+}
+.snake5{
+height: 350px;
+    width: 50px;
+    position: absolute;
+    z-index: 1;
+    margin-top: 143px;
+    margin-left: 100px;
+}
+.ladder1{
+height: 320px;
+    width: 50px;
+    position: absolute;
+    z-index: 1;
+    margin-top: 90px;
+    margin-left: 35px;
+}
+.ladder3{
+height: 285px;
+    width: 50px;
+    position: absolute;
+    z-index: 1;
+    margin-top: 100px;
+    margin-left: 650px;
+}
+.ladder4{
+height: 300px;
+    width: 50px;
+    position: absolute;
+    z-index: 1;
+    margin-top: 15px;
+    margin-left: 240px;
+}
+.ladder5{
+height: 300px;
+    width: 60px;
+    position: absolute;
+    z-index: 1;
+    margin-top: 240px;
+    margin-left: 300px;
+}
+#error1
+{
+    display: none;
+    color: red;
+}
+#error2{
+    display: none;
+    color: red;
+}
+#cup
+{
+    margin-right: 200px;
+}
+.player1
+{
+     color: red;
+}
+.player2
+{
+    color: blue;
+}
+#point1
+{
+    display: none;
+}
+#point2
+{
+    display: none;
+}
+#player1
+{
+    font-size: 12px;
+}
+#player2
+{
+    font-size: 12px;
+}

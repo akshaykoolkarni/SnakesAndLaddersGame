@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>snake and ladders game</title>
+        <link href="css/index.css" rel="stylesheet">
+        <link href="css/bootstrap.css" rel="stylesheet">
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link href='https://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+    </head>
+    <body>
+    <div class="modal fade" id="ruleModal" method="post">
+        <div class="modal-dialog">
+            <div class="modal-content" id="ruleStyle">
+                <div class="modal-header" style="margin: 10px;padding:10px;font-size:16px; font-family: oswald;">
+                    Snake And Ladder's Game!!!!!.
+                </div>
+                <div class="modal-header">
+                    <form role="form">
+                        <div class="form-group">
+                            <form role="form">
+                                <div class="form-group">
+                                    <label>player1:</label><input type="text" class="form-control" id = "p1" name ="player1" maxlength="8"><div id="error1">player1 name must be required.</div>
+                                    <label>player2:</label><input type="text" class="form-control" id = "p2" name ="player2" maxlength="8"><div id="error2">player2 name must be required.</div>
+                                    <button type="button" class="btn btn-warning" style="margin: 10px;padding:10px;font-size:16px; font-family: oswald;float: right;" data-dismiss="modal">close</button>
+                                    <button type="button" class="btn btn-success startgame" id ="startGame" style="margin: 10px;padding:10px;font-size:16px; font-family: oswald;float: right;">Start Game</button>
+                                </div>
+                            </form>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+        <div class="modal fade" id="myModal">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header" style="margin: 10px;padding:10px;font-size:16px; font-family: oswald;">
+                        <h3>Welcome To Most Famous Entertainment Game!!!</h3>
+                        <h3>your life my Rules: </h3>
+                        <div>
+                            <h4>0> This game is a regular Snake and Ladders game.</h4>
+                            <h4>1> This game contains 2 players.</h4>
+                            <h4>2> press start button and close it.</h4>
+                            <h4>3> Snakes will take you backwards in your journey.</h4>
+                            <h4>4> Ladders will push you ahead, you can call them shortcuts.</h4>
+                            <h4>5> Click on the dice.</h4>
+                            <h4>6> Hundred is the last step. The first player reaches the 100, is the winner!.</h4>
+                        </div>
+                        <button type="button" class="btn btn-success" data-dismiss="modal" id="closeModal" style="float: right;">I Accept..</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="winModal">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-content">
+                        <div class="modal-header" style="margin: 10px;padding:10px;font-size:16px; font-family: oswald;">
+                            <h3>congratulations.....</h3>
+                        </div>
+                        <div class="modal-footer">
+                            <img src="images/cup.jpg" width="150px" height="150px;" alt="winner's cup" id="cup">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container parent">
+                <div class="col-sm-12">
+                    <div class="col-sm-8 col-sm-offset-2 my_border main_content">
+                        <h1>Snake And Ladder's Game</h1>
+                    </div>
+                </div>
+                 <div class="col-sm-12">
+                     <div class="col-sm-2">
+                        <img src="images/dice.gif" alt="dice" width="80px" height="80px" class="dice" />
+                         <div class="random" id="random">Dice rolled at:<span class="score"></span></div>
+                         <div class="random"><span class="glyphicon glyphicon-hand-right" id="point1"></span>&nbsp;<span id="player1"></span> is at:<span class="player1"></span></div>
+                         <div class="random"><span class="glyphicon glyphicon-hand-right" id="point2"></span>&nbsp;<span id="player2"></span> is at:<span class="player2"></span></div>
+                     </div>
+                     <div class="col-sm-8">
+                        <table class="table">
+                            <tr class="odd">
+                                <td class="content_table" id="random-100"><h4>100</h4></td>
+                                <td class="content_table" id="random-99"><h4>99</h4></td>
+                                <td class="content_table" id="random-98"><h4>98</h4></td>
+                                <td class="content_table" id="random-97"><h4>97</h4></td>
+                                <td class="content_table" id="random-96"><h4>96</h4></td>
+                                <td class="content_table" id="random-95"><h4>95</h4></td>
+                                <td class="content_table" id="random-94"><h4>94</h4></td>
+                                <td class="content_table" id="random-93"><h4>93</h4></td>
+                                <td class="content_table" id="random-92"><h4>92</h4></td>
+                                <td class="content_table" id="random-91"><h4>91</h4></td>
+                            </tr>
+                            <tr class="even">
+                                <td class="content_table" id="random-81"><h4>81</h4></td>
+                                <td class="content_table" id="random-82"><h4>82</h4></td>
+                                <td class="content_table" id="random-83"><h4>83</h4></td>
+                                <td class="content_table" id="random-84"><h4>84</h4></td>
+                                <td class="content_table" id="random-85"><h4>85</h4></td>
+                                <td class="content_table" id="random-86"><h4>86</h4></td>
+                                <td class="content_table" id="random-87"><h4>87</h4></td>
+                                <td class="content_table" id="random-88"><h4>88</h4></td>
+                                <td class="content_table" id="random-89"><h4>89</h4></td>
+                                <td class="content_table" id="random-90"><h4>90</h4></td>
+                            </tr>
+                            <tr class="odd">
+                                <td class="content_table" id="random-80"><h4>80</h4></td>
+                                <td class="content_table" id="random-79"><h4>79</h4></td>
+                                <td class="content_table" id="random-78"><h4>78</h4></td>
+                                <td class="content_table" id="random-77"><h4>77</h4></td>
+                                <td class="content_table" id="random-76"><h4>76</h4></td>
+                                <td class="content_table" id="random-75"><h4>75</h4></td>
+                                <td class="content_table" id="random-74"><h4>74</h4></td>
+                                <td class="content_table" id="random-73"><h4>73</h4></td>
+                                <td class="content_table" id="random-72"><h4>72</h4></td>
+                                <td class="content_table" id="random-71"><h4>71</h4></td>
+                            </tr>
+                            <tr class="even">
+                                <td class="content_table" id="random-61"><h4>61</h4></td>
+                                <td class="content_table" id="random-62"><h4>62</h4></td>
+                                <td class="content_table" id="random-63"><h4>63</h4></td>
+                                <td class="content_table" id="random-64"><h4>64</h4></td>
+                                <td class="content_table" id="random-65"><h4>65</h4></td>
+                                <td class="content_table" id="random-66"><h4>66</h4></td>
+                                <td class="content_table" id="random-67"><h4>67</h4></td>
+                                <td class="content_table" id="random-68"><h4>68</h4></td>
+                                <td class="content_table" id="random-69"><h4>69</h4></td>
+                                <td class="content_table" id="random-70"><h4>70</h4></td>
+                            </tr>
+                            <tr class="odd">
+                                <img src="images/s1.png" alt="snake" class="snake4" />
+                                <td class="content_table" id="random-60"><h4>60</h4></td>
+                                <td class="content_table" id="random-59"><h4>59</h4></td>
+                                <td class="content_table" id="random-58"><h4>58</h4></td>
+                                <td class="content_table" id="random-57"><h4>57</h4></td>
+                                <td class="content_table" id="random-56"><h4>56</h4></td>
+                                <td class="content_table" id="random-55"><h4>55</h4></td>
+                                <img src="images/l4.gif" alt="ladder" class="ladder5" />
+                                <img src="images/s2.png" alt="snake" class="snake5" />
+                                <td class="content_table" id="random-54"><h4>54</h4></td>
+                                <td class="content_table" id="random-53"><h4>53</h4></td>
+                                <td class="content_table" id="random-52"><h4>52</h4></td>
+                                <td class="content_table" id="random-51"><h4>51</h4></td>
+                            </tr>
+                            <tr class="even">
+                                <td class="content_table" id="random-41"><h4>41</h4></td>
+                                <td class="content_table" id="random-42"><h4>42</h4></td>
+                                <td class="content_table" id="random-43"><h4>43</h4></td>
+                                <td class="content_table" id="random-44"><h4>44</h4></td>
+                                <td class="content_table" id="random-45"><h4>45</h4></td>
+                                <td class="content_table" id="random-46"><h4>46</h4></td>
+                                <td class="content_table" id="random-47"><h4>47</h4></td>
+                                <img src="images/s1.png" alt="snake" class="snake3" />
+                                <img src="images/l2.png" alt="ladder" class="ladder3" />
+                                <td class="content_table" id="random-48"><h4>48</h4></td>
+                                <td class="content_table" id="random-49"><h4>49</h4></td>
+                                <td class="content_table" id="random-50"><h4>50</h4></td>
+                            </tr>
+                            <tr class="odd">
+                                <td class="content_table" id="random-40"><h4>40</h4></td>
+                                <td class="content_table" id="random-39"><h4>39</h4></td>
+                                <td class="content_table" id="random-38"><h4>38</h4></td>
+                                <td class="content_table" id="random-37"><h4>37</h4></td>
+                                <td class="content_table" id="random-36"><h4>36</h4></td>
+                                <td class="content_table" id="random-35"><h4>35</h4></td>
+                                <td class="content_table" id="random-34"><h4>34</h4></td>
+                                <td class="content_table" id="random-33"><h4>33</h4></td>
+                                <td class="content_table" id="random-32"><h4>32</h4></td>
+                                <td class="content_table" id="random-31"><h4>31</h4></td>
+                            </tr>
+                            <tr class="even">
+                                <td class="content_table" id="random-21"><h4>21</h4></td>
+                                <td class="content_table" id="random-22"><h4>22</h4></td>
+                                <td class="content_table" id="random-23"><h4>23</h4></td>
+                                <td class="content_table" id="random-24"><h4>24</h4></td>
+                                <img src="images/s2.png" alt="snake" class="snake2" />
+                                <td class="content_table" id="random-25"><h4>25</h4></td>
+                                <td class="content_table" id="random-26"><h4>26</h4></td>
+                                <td class="content_table" id="random-27"><h4>27</h4></td>
+                                <td class="content_table" id="random-28"><h4>28</h4></td>
+                                <td class="content_table" id="random-29"><h4>29</h4></td>
+                                <td class="content_table" id="random-30"><h4>30</h4></td>
+                            </tr>
+                            <tr class="odd">
+                                <td class="content_table" id="random-20"><h4>20</h4></td>
+                                <td class="content_table" id="random-19"><h4>19</h4></td>
+                                <td class="content_table" id="random-18"><h4>18</h4></td>
+                                <td class="content_table" id="random-17"><h4>17</h4></td>
+                                <td class="content_table" id="random-16"><h4>16</h4></td>
+                                <td class="content_table" id="random-15"><h4>15</h4></td>
+                                <td class="content_table" id="random-14"><h4>14</h4></td>
+                                <td class="content_table" id="random-13"><h4>13</h4></td>
+                                <td class="content_table" id="random-12"><h4>12</h4></td>
+                                <td class="content_table" id="random-11"><h4>11</h4></td>
+                            </tr>
+                            <tr class="even">
+                                <td class="content_table" id="random-1"><h4>1</h4></td>
+                                <td class="content_table" id="random-2"><h4>2</h4></td>
+                                <td class="content_table" id="random-3"><h4>3</h4></td>
+                                <img src="images/l1.png" alt="ladder" class="ladder1" />
+                                <td class="content_table" id="random-4"><h4>4</h4></td>
+                                <td class="content_table" id="random-5"><h4>5</h4></td>
+                                <td class="content_table" id="random-6"><h4>6</h4></td>
+                                <td class="content_table" id="random-7"><h4>7</h4></td>
+                                <td class="content_table" id="random-8"><h4>8</h4></td>
+                                <td class="content_table" id="random-9"><h4>9</h4></td>
+                                <td class="content_table" id="random-10"><h4>10</h4></td>
+                            </tr>
+                        </table>
+                    </div>
+                  </div>
+        </div>
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/bootstrap.js "></script>
+    <script type="text/javascript" src="js/bootstrap.min.js "></script>
+    <script type="text/javascript" src="js/index.js"></script>
+    </body>
+</html>
