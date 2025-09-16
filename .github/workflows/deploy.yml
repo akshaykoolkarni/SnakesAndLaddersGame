@@ -21,7 +21,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./   # Change if your site is inside a folder (e.g. ./public)
+          path: ./snake_and_ladders_game   # Change if your site is inside a folder (e.g. ./public)
 
       # Deploy to GitHub Pages
       - name: Deploy to GitHub Pages
